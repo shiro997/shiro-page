@@ -1,0 +1,41 @@
+
+  <form [formGroup]="frmContact">
+
+    <div class="row" id="mail-row">
+      <div class="col">
+        <input type="email" class="form-control" placeholder="email" formControlName="Email">
+      </div>
+    </div>  
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Nombres y Apellidos" formControlName="UsrName">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <!--<input type="text" class="form-control" placeholder="Nombres y Apellidos" formControlName="UsrName">-->
+        <select class="form-control" formControlName="Device">
+          <option selected value="0">seleccione dispositivo</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <textarea type="text" class="form-control" cols="32" rows="10" placeholder="Mensaje" formControlName="Msg"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input type="tel" class="form-control" placeholder="teléfono/celular" formControlName="Tel">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Dirección" formControlName="Address">
+      </div>
+    </div>
+    
+    <button class="btn btn-primary" (click)="contactTo()">Enviar</button>
+    
+
+  </form>
