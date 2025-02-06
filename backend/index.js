@@ -1,7 +1,9 @@
 // Importa Express
 const express = require('express');
+const cors = require('cors');
 const db = require('./db/database');
 const deviceRoutes = require('./routes/deviceroutes');
+const userRoutes = require('./routes/deviceroutes');
 
 // Crea una instancia de la aplicación
 const app = express();
@@ -11,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 // Middleware para procesar JSON
 app.use(express.json());
+app.use(cors());
 
 // Ruta base de prueba
 app.get('/', (req, res) => {
@@ -18,6 +21,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/device',deviceRoutes);
+app.use('/user', userRoutes);
 
 // Inicia el servidor
 app.listen(PORT, () => {
