@@ -1,5 +1,7 @@
 const Device = require("../model/device.model.js");
 class DeviceController{
+  constructor(){
+  }
   createDevices = async (req,res) => {
     const {Name} = req.body;
   

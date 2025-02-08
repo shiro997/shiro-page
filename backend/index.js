@@ -2,8 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./db/database');
-const deviceRoutes = require('./routes/deviceroutes');
-const userRoutes = require('./routes/deviceroutes');
+const apiroutes = require('./routes/api.routes');
 
 // Crea una instancia de la aplicación
 const app = express();
@@ -20,8 +19,7 @@ app.get('/', (req, res) => {
   res.send('¡Bienvenido a mi API en blanco con Express!');
 });
 
-app.use('/device',deviceRoutes);
-app.use('/user', userRoutes);
+app.use('/api', apiroutes);
 
 // Inicia el servidor
 app.listen(PORT, () => {
